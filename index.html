@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elba House · Las Terrenas — Beachfront apartments in Samaná, DR</title>
 <meta name="description" content="Three recently built apartments steps from Playa Casa Blanca in Las Terrenas, Dominican Republic. Pool, keyless entry, 5.0-rated Superhost.">
-<link rel="preload" as="image" href="elba-photos/a2_20.jpg">
+<meta name="theme-color" content="#101614">
+<link rel="preload" as="image" href="elba-photos/a2_20.jpg" media="(min-width: 641px)">
+<link rel="preload" as="image" href="elba-photos/sm/a2_20.jpg" media="(max-width: 640px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -343,6 +345,40 @@ footer.site{padding:52px 0 60px; background:var(--paper)}
 .lb-nav button:hover{background:#fff}
 .lb-cap{display:flex; justify-content:space-between; gap:14px; color:#efece5; font-size:14px; padding:14px 6px 0}
 .lb-cap span:last-child{color:#b3ac9e; flex:none}
+
+/* ---------- mobile polish ---------- */
+@media(max-width:640px){
+  .wrap{padding:0 20px}
+  .nav-in{height:64px; padding:0 20px; gap:16px}
+  .nav .btn{padding:9px 16px; font-size:13.5px}
+  .hero-main{padding:96px 20px 0}
+  .hero h1{font-size:clamp(36px,11vw,44px)}
+  .hero .sub{margin-bottom:24px}
+  .hero-cta{flex-direction:column; align-items:stretch; margin-bottom:40px}
+  .hero-cta .btn{justify-content:center; text-align:center}
+  .trust-in{padding:14px 20px; gap:7px 22px; font-size:12.5px}
+  .sec{padding:60px 0 0}
+  .sec-head{margin-bottom:30px}
+  .intro-quote{font-size:20px}
+  .intro-imgs{height:320px}
+  .stat-row{gap:10px}
+  .stat{padding:11px 16px}
+  .stat b{font-size:19px}
+  .bookbar{padding:20px; border-radius:18px}
+  .band{margin-top:60px}
+  .band-track{grid-auto-columns:minmax(240px,80vw); padding-left:20px; padding-right:20px}
+  .amen div{padding:14px 16px; font-size:13.5px}
+  .hostband{margin-top:60px; padding:52px 0}
+  .ava{width:84px;height:84px}
+  .cta-band{margin-top:64px}
+  .cta-in{padding:72px 20px}
+  .sheet{padding:18px; border-radius:16px}
+  .grp-nav button{padding:6px 11px; font-size:12px}
+  .lb-nav{padding:0 8px}
+  .lb-nav button{width:36px;height:36px;font-size:15px}
+  .lb-cap{font-size:12.5px}
+}
+.hero-bg picture{display:contents}
 </style>
 </head>
 <body>
@@ -368,7 +404,12 @@ footer.site{padding:52px 0 60px; background:var(--paper)}
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="hero-bg"><img src="elba-photos/a2_20.jpg" alt="Playa Casa Blanca from above — turquoise water and golden sand" fetchpriority="high"></div>
+  <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 640px)" srcset="elba-photos/sm/a2_20.jpg">
+      <img src="elba-photos/a2_20.jpg" alt="Playa Casa Blanca from above — turquoise water and golden sand" fetchpriority="high">
+    </picture>
+  </div>
   <div class="hero-main">
     <p class="eyebrow">Las Terrenas · Samaná · Dominican Republic</p>
     <h1>Wake up <em>steps</em> from the Caribbean</h1>
@@ -409,8 +450,8 @@ footer.site{padding:52px 0 60px; background:var(--paper)}
         </div>
       </div>
       <div class="intro-imgs">
-        <button class="ii-a" data-p="p_01" aria-label="Penthouse stair and dining"><img src="elba-photos/p_01.jpg" alt="Penthouse — stair and dining" loading="lazy"></button>
-        <button class="ii-b" data-p="p_04" aria-label="The pool"><img src="elba-photos/p_04.jpg" alt="The pool" loading="lazy"></button>
+        <button class="ii-a" data-p="p_01" aria-label="Penthouse stair and dining"><img src="elba-photos/sm/p_01.jpg" alt="Penthouse — stair and dining" loading="lazy"></button>
+        <button class="ii-b" data-p="p_04" aria-label="The pool"><img src="elba-photos/sm/p_04.jpg" alt="The pool" loading="lazy"></button>
       </div>
     </div>
   </section>
@@ -509,7 +550,7 @@ footer.site{padding:52px 0 60px; background:var(--paper)}
         </div>
       </div>
       <button class="loc-shot" data-p="a2_21" aria-label="Las Terrenas from above">
-        <img src="elba-photos/a2_21.jpg" alt="Las Terrenas from above — the house marked among palms, steps from the water" loading="lazy">
+        <img src="elba-photos/sm/a2_21.jpg" alt="Las Terrenas from above — the house marked among palms, steps from the water" loading="lazy">
       </button>
     </div>
   </section>
@@ -577,7 +618,10 @@ footer.site{padding:52px 0 60px; background:var(--paper)}
 
   <!-- ============ FINAL CTA ============ -->
   <section class="cta-band">
-    <div class="bg"><img src="elba-photos/p_27.jpg" alt="The beach at Las Terrenas" loading="lazy"></div>
+    <div class="bg"><picture style="display:contents">
+      <source media="(max-width: 640px)" srcset="elba-photos/sm/p_27.jpg">
+      <img src="elba-photos/p_27.jpg" alt="The beach at Las Terrenas" loading="lazy">
+    </picture></div>
     <div class="cta-in">
       <p class="eyebrow">Elba House awaits</p>
       <h2>The magic of Las Terrenas is a booking away</h2>
@@ -679,7 +723,8 @@ const cap = {
   p_26:"Penthouse terrace", p_27:"The beach, seconds away", p_28:"The house from above",
   p_29:"Las Terrenas — the neighborhood"
 };
-const P = id => DIR + id + ".jpg";
+const P  = id => DIR + id + ".jpg";        // full size — hero, lightbox, CTA band
+const Psm = id => DIR + "sm/" + id + ".jpg"; // 800px — cards, strips, grids (mobile-friendly)
 
 /* Master lightbox order */
 const PHOTOS = [
@@ -768,7 +813,7 @@ UNITS.forEach((u, i) => {
   shot.setAttribute("aria-label", u.full);
   const badge = el("span","ucard-badge" + (u.dark ? " dark" : ""));
   badge.textContent = u.badge;
-  const im = el("img"); im.src = P(u.cover); im.alt = u.full; if (i>0) im.loading = "lazy";
+  const im = el("img"); im.src = Psm(u.cover); im.alt = u.full; if (i>0) im.loading = "lazy";
   shot.append(badge, im);
   shot.addEventListener("click", () => openLB(u.cover));
   const body = el("div","ucard-body");
@@ -795,7 +840,7 @@ const band = $("#bandTrack");
 ["p_04","a1_01","p_13","a2_07","p_08","a2_18","p_17","a2_06","p_26","a1_07","p_05","a2_15"].forEach(id => {
   const b = el("button");
   b.setAttribute("aria-label", cap[id] || id);
-  const im = el("img"); im.src = P(id); im.alt = cap[id] || ""; im.loading = "lazy";
+  const im = el("img"); im.src = Psm(id); im.alt = cap[id] || ""; im.loading = "lazy";
   b.appendChild(im); b.addEventListener("click", () => openLB(id));
   band.appendChild(b);
 });
@@ -817,7 +862,7 @@ GROUPS.forEach(([label, ids]) => {
   const g = el("div","pgrid");
   ids.forEach(id => {
     const b = el("button"); b.setAttribute("aria-label", cap[id] || id);
-    const im = el("img"); im.src = P(id); im.alt = cap[id] || ""; im.loading = "lazy";
+    const im = el("img"); im.src = Psm(id); im.alt = cap[id] || ""; im.loading = "lazy";
     b.appendChild(im);
     b.addEventListener("click", () => { closeOv($("#allOv")); openLB(id); });
     g.appendChild(b);
