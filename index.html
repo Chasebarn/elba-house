@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elba House · Las Terrenas — Beachfront apartments in Samaná, DR</title>
+<meta name="description" content="Three recently built apartments steps from Playa Casa Blanca in Las Terrenas, Dominican Republic. Pool, keyless entry, 5.0-rated Superhost.">
+<link rel="preload" as="image" href="elba-photos/a2_20.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  ELBA HOUSE — single-page site
+  ============================================================
+  All copy, specs, ratings and links are from the live Airbnb listings
+  and @elbahousedr. Photos are the actual listing photos, stored locally
+  in ./elba-photos/ (a1_* one-bed, a2_* two-bed, p_* penthouse, host.jpg).
+-->
+
+<style>
+:root{
+  --ink:#181510;
+  --ink-2:#5a544a;
+  --ink-3:#8f887b;
+  --line:#e7e0d2;
+  --paper:#faf7f0;
+  --card:#fffdf8;
+  --sand:#f3edE1;
+  --sand:#f3ede1;
+  --sea:#0c5d63;
+  --sea-d:#08464b;
+  --gold:#b98a2f;
+  --radius:18px;
+  --shadow:0 1px 2px rgba(24,21,16,.05), 0 10px 32px -14px rgba(24,21,16,.22);
+  --shadow-lg:0 2px 8px rgba(24,21,16,.07), 0 30px 70px -24px rgba(24,21,16,.35);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+button{font:inherit; cursor:pointer}
+.wrap{max-width:1180px; margin:0 auto; padding:0 28px}
+.serif{font-family:var(--serif)}
+.eyebrow{
+  font-size:11.5px; letter-spacing:.28em; text-transform:uppercase; font-weight:600;
+  color:var(--gold); margin:0 0 14px;
+}
+h2{font-family:var(--serif); font-size:clamp(26px,3.2vw,38px); font-weight:520;
+  letter-spacing:-.01em; line-height:1.12; margin:0 0 16px}
+h2 em{font-style:italic; color:var(--sea)}
+p{margin:0 0 12px; color:var(--ink-2)}
+
+/* ---------- buttons ---------- */
+.btn{
+  border:0; border-radius:999px; padding:14px 26px; font-size:14.5px; font-weight:600;
+  background:var(--sea); color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  transition:transform .15s, background .18s, box-shadow .18s; letter-spacing:.01em;
+}
+.btn:hover{background:var(--sea-d); transform:translateY(-1px); box-shadow:0 10px 24px -8px rgba(12,93,99,.6)}
+.btn:active{transform:translateY(0)}
+.btn.gold{background:var(--ink); color:var(--paper)}
+.btn.gold:hover{background:#000; box-shadow:0 10px 24px -8px rgba(0,0,0,.5)}
+.btn.glass{
+  background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.45);
+  backdrop-filter:blur(8px);
+}
+.btn.glass:hover{background:rgba(255,255,255,.26); box-shadow:none}
+.btn.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink); color:var(--paper); box-shadow:none}
+.tlink{
+  font-size:14px; font-weight:600; color:var(--ink); text-decoration:none;
+  border-bottom:1.5px solid var(--gold); padding-bottom:2px;
+}
+.tlink:hover{color:var(--sea); border-color:var(--sea)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:60; transition:background .25s, box-shadow .25s;
+}
+.nav-in{display:flex; align-items:center; gap:30px; height:78px; max-width:1180px; margin:0 auto; padding:0 28px}
+.mark{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:auto}
+.mark svg{width:36px; height:36px; flex:none}
+.mark-t{display:flex; flex-direction:column; line-height:1.05}
+.mark-t b{font-family:var(--serif); font-size:17px; letter-spacing:.12em; font-weight:560; color:#fff; transition:color .25s}
+.mark-t span{font-size:9px; letter-spacing:.3em; color:rgba(255,255,255,.75); text-transform:uppercase; transition:color .25s}
+.nav a.lnk{
+  text-decoration:none; font-size:14px; font-weight:500; color:rgba(255,255,255,.9); padding:8px 0;
+  border-bottom:1.5px solid transparent; transition:.2s;
+}
+.nav a.lnk:hover{border-color:#fff; color:#fff}
+.nav .btn{padding:11px 22px}
+.nav.solid{background:rgba(250,247,240,.92); backdrop-filter:saturate(1.4) blur(14px); box-shadow:0 1px 0 var(--line)}
+.nav.solid .mark-t b{color:var(--ink)}
+.nav.solid .mark-t span{color:var(--ink-3)}
+.nav.solid a.lnk{color:var(--ink-2)}
+.nav.solid a.lnk:hover{color:var(--ink); border-color:var(--ink)}
+@media(max-width:860px){ .nav .lnk{display:none} }
+
+/* ---------- hero ---------- */
+.hero{position:relative; min-height:100svh; display:flex; flex-direction:column; color:#fff}
+.hero-bg{position:absolute; inset:0; overflow:hidden}
+.hero-bg img{width:100%; height:100%; object-fit:cover; object-position:center 62%}
+.hero-bg:after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(10,14,15,.42) 0%, rgba(10,14,15,.12) 34%,
+    rgba(10,14,15,.16) 58%, rgba(9,13,14,.74) 100%);
+}
+.hero-main{
+  position:relative; z-index:2; flex:1; display:flex; flex-direction:column;
+  justify-content:flex-end; max-width:1180px; width:100%; margin:0 auto; padding:130px 28px 0;
+}
+.hero .eyebrow{color:#f4d489; text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.hero h1{
+  font-family:var(--serif); font-weight:480; letter-spacing:-.015em;
+  font-size:clamp(40px,6.2vw,74px); line-height:1.04; margin:0 0 18px; max-width:13ch;
+  text-shadow:0 2px 24px rgba(0,0,0,.35);
+}
+.hero h1 em{font-style:italic}
+.hero .sub{
+  font-size:clamp(16px,1.6vw,19px); color:rgba(255,255,255,.92); max-width:46ch;
+  margin-bottom:30px; text-shadow:0 1px 12px rgba(0,0,0,.4);
+}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px}
+.trust{
+  position:relative; z-index:2; border-top:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(6px); background:rgba(10,14,15,.22);
+}
+.trust-in{
+  max-width:1180px; margin:0 auto; padding:18px 28px; display:flex; flex-wrap:wrap;
+  gap:10px 40px; font-size:13.5px; color:rgba(255,255,255,.95); align-items:center;
+}
+.trust b{font-weight:600}
+.trust .t{display:inline-flex; align-items:center; gap:9px}
+.trust svg{width:15px; height:15px; flex:none; fill:#f4d489}
+
+/* ---------- section scaffolding ---------- */
+section{scroll-margin-top:96px}
+.sec{padding:92px 0 0}
+.sec-head{max-width:640px; margin-bottom:44px}
+.split{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center}
+@media(max-width:880px){ .split{grid-template-columns:1fr; gap:32px} }
+
+/* ---------- intro ---------- */
+.intro-quote{
+  font-family:var(--serif); font-size:clamp(21px,2.4vw,29px); font-weight:440;
+  line-height:1.35; color:var(--ink); font-style:italic; margin:0 0 22px;
+}
+.stat-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px}
+.stat{
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 20px;
+  box-shadow:var(--shadow);
+}
+.stat b{display:block; font-family:var(--serif); font-size:22px; font-weight:560}
+.stat span{font-size:12px; color:var(--ink-3); letter-spacing:.06em; text-transform:uppercase; font-weight:600}
+.intro-imgs{position:relative; height:520px}
+.intro-imgs button{position:absolute; border:0; padding:0; overflow:hidden; cursor:zoom-in; border-radius:var(--radius); box-shadow:var(--shadow-lg)}
+.intro-imgs img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.intro-imgs button:hover img{transform:scale(1.04)}
+.ii-a{top:0; left:0; width:64%; height:72%}
+.ii-b{right:0; bottom:0; width:52%; height:56%; outline:6px solid var(--paper)}
+@media(max-width:880px){ .intro-imgs{height:380px} }
+
+/* ---------- unit cards ---------- */
+.units{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+@media(max-width:960px){ .units{grid-template-columns:1fr} }
+.ucard{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
+  transition:transform .22s, box-shadow .22s;
+}
+.ucard:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+.ucard-shot{position:relative; aspect-ratio:4/3; overflow:hidden; border:0; padding:0; cursor:zoom-in; background:var(--sand); width:100%}
+.ucard-shot img{width:100%; height:100%; object-fit:cover; transition:transform .55s ease}
+.ucard-shot:hover img{transform:scale(1.05)}
+.ucard-badge{
+  position:absolute; top:14px; left:14px; z-index:2; font-size:11.5px; font-weight:600;
+  letter-spacing:.04em; background:rgba(250,247,240,.94); border-radius:999px; padding:6px 12px;
+  box-shadow:var(--shadow);
+}
+.ucard-badge.dark{background:rgba(24,21,16,.85); color:#f4d489}
+.ucard-body{padding:22px 22px 24px; display:flex; flex-direction:column; flex:1}
+.ucard h3{font-family:var(--serif); font-size:21px; font-weight:560; margin:0 0 6px; letter-spacing:-.01em}
+.ucard .specs{font-size:13.5px; color:var(--ink-3); margin-bottom:12px}
+.ucard .desc{font-size:14px; color:var(--ink-2); margin-bottom:18px; flex:1}
+.ucard-cta{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.ucard-cta .btn{padding:11px 20px; font-size:13.5px}
+.ucard-cta .tlink{font-size:13px}
+
+/* ---------- booking bar ---------- */
+.bookbar{
+  margin-top:34px; background:var(--card); border:1px solid var(--line); border-radius:22px;
+  padding:28px; box-shadow:var(--shadow-lg);
+}
+.bookbar h3{font-family:var(--serif); font-size:21px; font-weight:540; margin:0 0 4px}
+.bookbar .bsub{font-size:13.5px; color:var(--ink-3); margin:0 0 18px}
+.bb-grid{display:grid; grid-template-columns:1.35fr 1fr 1fr 1fr auto; gap:10px; align-items:stretch}
+@media(max-width:960px){ .bb-grid{grid-template-columns:1fr 1fr} .bb-grid .bb-go{grid-column:span 2} }
+@media(max-width:560px){ .bb-grid{grid-template-columns:1fr} .bb-grid .bb-go{grid-column:auto} }
+.bb-f{
+  background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:9px 14px;
+  transition:border-color .15s, box-shadow .15s;
+}
+.bb-f:focus-within{border-color:var(--sea); box-shadow:0 0 0 3px rgba(12,93,99,.12)}
+.bb-f span{display:block; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:2px}
+.bb-f select,.bb-f input{
+  border:0; outline:0; width:100%; font:inherit; font-size:14px; background:transparent; color:var(--ink);
+}
+.bb-guests{display:flex; align-items:center; justify-content:space-between; gap:8px}
+.bb-guests .n{font-size:14px}
+.bb-guests button{
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--card);
+  color:var(--ink-2); font-size:14px; line-height:1; display:grid; place-items:center;
+}
+.bb-guests button:hover:not(:disabled){border-color:var(--sea); color:var(--sea)}
+.bb-guests button:disabled{opacity:.3; cursor:not-allowed}
+.bb-go{display:flex}
+.bb-go .btn{width:100%; justify-content:center; font-weight:650}
+.bb-note{font-size:12.5px; color:var(--ink-3); margin:12px 2px 0; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+.bb-note b{color:var(--ink); font-weight:600}
+.bb-warn{color:#c1553c}
+
+/* ---------- gallery band ---------- */
+.band{margin-top:92px; position:relative}
+.band-track{
+  display:grid; grid-auto-flow:column; grid-auto-columns:minmax(300px,420px);
+  gap:10px; overflow-x:auto; padding:0 max(28px,calc((100vw - 1180px)/2 + 28px)) 6px;
+  scroll-snap-type:x mandatory; scrollbar-width:none;
+}
+.band-track::-webkit-scrollbar{display:none}
+.band-track button{
+  aspect-ratio:4/3; border-radius:var(--radius); overflow:hidden; border:0; padding:0;
+  cursor:zoom-in; scroll-snap-align:center; background:var(--sand); box-shadow:var(--shadow);
+}
+.band-track img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.band-track button:hover img{transform:scale(1.045)}
+.band-foot{display:flex; justify-content:center; margin-top:26px}
+
+/* ---------- amenities ---------- */
+.amen{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--card); box-shadow:var(--shadow)}
+@media(max-width:880px){ .amen{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .amen{grid-template-columns:1fr} }
+.amen div{
+  display:flex; gap:13px; align-items:center; font-size:14.5px; color:var(--ink-2);
+  padding:17px 20px; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
+}
+.amen svg{width:20px;height:20px;flex:none;stroke:var(--sea);fill:none;stroke-width:1.5}
+
+/* ---------- location ---------- */
+.near{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:8px}
+@media(max-width:680px){ .near{grid-template-columns:1fr 1fr} }
+.near div{border:1px solid var(--line); border-radius:12px; padding:13px 16px; font-size:13.5px; background:var(--card)}
+.near b{display:block; font-size:14px; color:var(--ink)}
+.near span{color:var(--ink-3); font-size:12.5px}
+.loc-shot{position:relative; border-radius:var(--radius); overflow:hidden; border:0; padding:0; cursor:zoom-in; width:100%; height:100%; min-height:300px; box-shadow:var(--shadow-lg)}
+.loc-shot img{width:100%; height:100%; object-fit:cover; transition:transform .5s}
+.loc-shot:hover img{transform:scale(1.03)}
+
+/* ---------- host ---------- */
+.hostband{margin-top:92px; background:var(--sand); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:72px 0}
+.host{display:grid; grid-template-columns:auto 1fr; gap:34px; align-items:start; max-width:820px}
+@media(max-width:620px){ .host{grid-template-columns:1fr} }
+.ava{width:104px;height:104px;border-radius:50%;overflow:hidden; box-shadow:var(--shadow-lg); outline:5px solid var(--card)}
+.ava img{width:100%;height:100%;object-fit:cover}
+.host-quote{font-family:var(--serif); font-style:italic; font-size:clamp(19px,2vw,24px); line-height:1.4; margin:0 0 16px; color:var(--ink)}
+.host-stats{display:flex; gap:26px; margin:16px 0 0; flex-wrap:wrap}
+.host-stats div b{display:block; font-family:var(--serif); font-size:19px; font-weight:560}
+.host-stats div span{font-size:11.5px; color:var(--ink-3); letter-spacing:.06em; text-transform:uppercase; font-weight:600}
+
+/* ---------- reviews ---------- */
+.rev{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px}
+@media(max-width:880px){ .rev{grid-template-columns:1fr} }
+.rev article{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:26px; box-shadow:var(--shadow); display:flex; flex-direction:column;
+}
+.rev .stars{color:var(--gold); letter-spacing:2px; font-size:13px; margin-bottom:12px}
+.rev p{font-family:var(--serif); font-size:16.5px; line-height:1.5; margin:0 0 16px; color:var(--ink); flex:1}
+.rev footer{font-size:13px; color:var(--ink-3)}
+.rev footer b{color:var(--ink); font-weight:600}
+.scorebar{
+  display:flex; gap:8px 34px; flex-wrap:wrap; margin:0 0 34px; font-size:13.5px; color:var(--ink-2);
+}
+.scorebar span b{color:var(--ink); font-weight:650}
+
+/* ---------- final CTA ---------- */
+.cta-band{position:relative; margin-top:100px; color:#fff; overflow:hidden}
+.cta-band .bg{position:absolute; inset:0}
+.cta-band .bg img{width:100%; height:100%; object-fit:cover; object-position:center 30%}
+.cta-band .bg:after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(9,13,14,.55), rgba(9,13,14,.72))}
+.cta-in{position:relative; z-index:2; text-align:center; padding:110px 28px; max-width:680px; margin:0 auto}
+.cta-in .eyebrow{color:#f4d489}
+.cta-in h2{color:#fff; font-size:clamp(30px,4vw,48px); font-weight:480}
+.cta-in p{color:rgba(255,255,255,.9); margin-bottom:30px}
+.cta-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+
+/* ---------- footer ---------- */
+footer.site{padding:52px 0 60px; background:var(--paper)}
+.f-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px}
+@media(max-width:760px){ .f-grid{grid-template-columns:1fr} }
+.f-grid h5{margin:0 0 10px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3)}
+.f-grid a{display:block; font-size:14.5px; color:var(--ink-2); text-decoration:none; padding:3px 0}
+.f-grid a:hover{color:var(--sea)}
+.f-mark{display:flex; align-items:center; gap:11px; text-decoration:none; margin-bottom:12px}
+.f-mark b{font-family:var(--serif); font-size:17px; letter-spacing:.12em; font-weight:560}
+.f-mark small{display:block; font-size:9px; letter-spacing:.3em; color:var(--ink-3); text-transform:uppercase}
+.f-bot{margin-top:38px; padding-top:20px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+/* ---------- modal / lightbox ---------- */
+.ov{position:fixed; inset:0; background:rgba(15,13,10,.78); backdrop-filter:blur(8px); z-index:100; display:none; place-items:center; padding:24px}
+.ov.on{display:grid}
+.sheet{background:var(--paper); border-radius:22px; max-width:1000px; width:100%; max-height:88vh; overflow:auto; padding:30px; box-shadow:var(--shadow-lg); position:relative}
+.sheet h3{font-family:var(--serif); font-size:24px; font-weight:540; margin:0 0 4px}
+.sheet .grp{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin:28px 0 12px; font-weight:650; scroll-margin-top:64px}
+.grp-nav{display:flex; gap:8px; flex-wrap:wrap; margin:14px 0 4px; position:sticky; top:0; background:var(--paper); padding:8px 0; z-index:4}
+.grp-nav button{
+  border:1px solid var(--line); background:var(--card); color:var(--ink-2); border-radius:999px;
+  padding:7px 14px; font-size:13px; font-weight:560; transition:.15s;
+}
+.grp-nav button:hover{border-color:var(--sea); color:var(--sea)}
+.pgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+@media(max-width:640px){ .pgrid{grid-template-columns:repeat(2,1fr)} }
+.pgrid button{aspect-ratio:4/3; border-radius:10px; overflow:hidden; border:0; padding:0; cursor:zoom-in; background:var(--sand)}
+.pgrid img{width:100%;height:100%;object-fit:cover; transition:transform .35s}
+.pgrid button:hover img{transform:scale(1.06)}
+.x{position:sticky; top:0; float:right; width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:16px;line-height:1; z-index:5}
+.x:hover{background:var(--sand)}
+.lb{max-width:min(1060px,94vw); width:100%; position:relative}
+.lb-img{
+  width:100%; max-height:78vh; border-radius:18px; overflow:hidden; background:#0d0b09;
+  display:grid; place-items:center; box-shadow:var(--shadow-lg);
+}
+.lb-img img{max-width:100%; max-height:78vh; object-fit:contain}
+.lb-nav{position:absolute; top:50%; left:0; right:0; transform:translateY(-50%); display:flex; justify-content:space-between; padding:0 14px; pointer-events:none}
+.lb-nav button{pointer-events:auto; width:44px;height:44px;border-radius:50%;border:0;background:rgba(250,247,240,.92);font-size:18px; box-shadow:var(--shadow)}
+.lb-nav button:hover{background:#fff}
+.lb-cap{display:flex; justify-content:space-between; gap:14px; color:#efece5; font-size:14px; padding:14px 6px 0}
+.lb-cap span:last-child{color:#b3ac9e; flex:none}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a class="mark" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.2" style="color:#f4d489"/>
+        <circle cx="20" cy="15" r="4.6" fill="#e8a838"/>
+        <path d="M9 24c4-1.6 7.5-1.6 11 0 3.5 1.6 7 1.6 11 0" fill="none" stroke="#f4d489" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="mark-t"><b>ELBA HOUSE</b><span>Las Terrenas</span></span>
+    </a>
+    <a class="lnk" href="#stays">Apartments</a>
+    <a class="lnk" href="#gallery">Gallery</a>
+    <a class="lnk" href="#location">Location</a>
+    <a class="lnk" href="#reviews">Reviews</a>
+    <a class="btn gold" href="#book">Book your stay</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="elba-photos/a2_20.jpg" alt="Playa Casa Blanca from above — turquoise water and golden sand" fetchpriority="high"></div>
+  <div class="hero-main">
+    <p class="eyebrow">Las Terrenas · Samaná · Dominican Republic</p>
+    <h1>Wake up <em>steps</em> from the Caribbean</h1>
+    <p class="sub">Three recently built apartments with a pool, keyless check-in, and
+      Playa Casa Blanca right across the street. Come stay and enjoy the magic of Las Terrenas.</p>
+    <div class="hero-cta">
+      <a class="btn gold" href="#stays">Choose your apartment</a>
+      <button class="btn glass" id="heroPhotos">Explore the gallery</button>
+    </div>
+  </div>
+  <div class="trust">
+    <div class="trust-in">
+      <span class="t"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21.1 7 14.2l-5-4.9 6.9-1z"/></svg><b>5.0</b>&nbsp;guest rating</span>
+      <span class="t"><b>Guest favorite</b>&nbsp;on Airbnb</span>
+      <span class="t">Hosted by a&nbsp;<b>Superhost</b></span>
+      <span class="t"><b>Pool</b>&nbsp;— one of the few in the area</span>
+      <span class="t">On&nbsp;<b>Playa Casa Blanca</b></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ INTRO ============ -->
+  <section class="sec">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">The house</p>
+        <p class="intro-quote">“Recently built, right on the beach, and one of the few places
+          in the neighborhood with a pool.”</p>
+        <p>Everything is a walk across the street — the sand, restaurants, the supermarket,
+          bakeries, a 24-hour pharmacy. Check yourself in with the smartlock, drop your bags,
+          and be in the water minutes later. Stylish, easy, and very comfortable.</p>
+        <div class="stat-row">
+          <div class="stat"><b>3</b><span>Apartments</span></div>
+          <div class="stat"><b>30&nbsp;sec</b><span>To the beach</span></div>
+          <div class="stat"><b>5.0&nbsp;★</b><span>Every review</span></div>
+          <div class="stat"><b>2–6</b><span>Guests per unit</span></div>
+        </div>
+      </div>
+      <div class="intro-imgs">
+        <button class="ii-a" data-p="p_01" aria-label="Penthouse stair and dining"><img src="elba-photos/p_01.jpg" alt="Penthouse — stair and dining" loading="lazy"></button>
+        <button class="ii-b" data-p="p_04" aria-label="The pool"><img src="elba-photos/p_04.jpg" alt="The pool" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ UNITS ============ -->
+  <section class="sec" id="stays">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The apartments</p>
+        <h2>Three ways to stay, <em>one address on the sand</em></h2>
+        <p>Every unit is newly built with a full kitchen, fast Wi-Fi, air conditioning
+          throughout, and access to the pool and gated courtyard.</p>
+      </div>
+
+      <div class="units" id="unitCards"></div>
+
+      <!-- booking bar -->
+      <div class="bookbar" id="book">
+        <h3>Plan your stay</h3>
+        <p class="bsub">Pick dates and we'll take you straight to live availability and pricing on Airbnb.</p>
+        <div class="bb-grid">
+          <label class="bb-f"><span>Apartment</span>
+            <select id="bUnit">
+              <option value="0">One Bedroom · up to 2</option>
+              <option value="1">Two Bedroom · up to 4</option>
+              <option value="2">Penthouse + Mezzanine · up to 6</option>
+            </select>
+          </label>
+          <label class="bb-f"><span>Check-in</span><input type="date" id="bIn"></label>
+          <label class="bb-f"><span>Checkout</span><input type="date" id="bOut"></label>
+          <div class="bb-f bb-guests">
+            <div><span>Guests</span><div class="n" id="bGuestLabel">1 guest</div></div>
+            <div style="display:flex; gap:8px">
+              <button id="gMinus" aria-label="Fewer guests">−</button>
+              <button id="gPlus" aria-label="More guests">+</button>
+            </div>
+          </div>
+          <div class="bb-go"><a class="btn" id="bGo" href="#" target="_blank" rel="noopener">Check availability →</a></div>
+        </div>
+        <div class="bb-note">
+          <span id="bSummary">Booking and payment happen securely on Airbnb.</span>
+          <span class="bb-warn" id="bWarn"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY BAND ============ -->
+  <section class="band" id="gallery">
+    <div class="wrap sec-head" style="margin-bottom:30px">
+      <p class="eyebrow">Gallery</p>
+      <h2>Look around</h2>
+    </div>
+    <div class="band-track" id="bandTrack"></div>
+    <div class="band-foot"><button class="btn ghost" id="allPhotosBtn">View the full gallery</button></div>
+  </section>
+
+  <!-- ============ AMENITIES ============ -->
+  <section class="sec" id="amenities">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Amenities</p>
+        <h2>Everything handled, <em>nothing to think about</em></h2>
+      </div>
+      <div class="amen">
+        <div><svg viewBox="0 0 24 24"><path d="M2 17c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0M2 21c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/></svg>Beach access — across the street</div>
+        <div><svg viewBox="0 0 24 24"><path d="M4 18c1.6-1.2 3.2-1.2 4.8 0s3.2 1.2 4.8 0 3.2-1.2 4.8 0"/><path d="M7 14V6.5a2 2 0 014 0M13 14V6.5a2 2 0 014 0"/></svg>Shared pool &amp; sitting area</div>
+        <div><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Keyless smartlock self check-in</div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 3v8a3 3 0 006 0V3M8 11v10M16 3c-1.5 1-2 3-2 5s.5 3 2 3v10"/></svg>Fully equipped kitchen</div>
+        <div><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="8" rx="2"/><path d="M7 19v-4M17 19v-4M7 11h.01M11 11h.01"/></svg>A/C in bedrooms &amp; living areas</div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0114 0M8 16a6 6 0 018 0"/><circle cx="12" cy="19.5" r="1.2"/></svg>Free fast Wi-Fi + workspace</div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20v-9l7-5 7 5v9"/><path d="M10 20v-5h4v5"/></svg>Free garage &amp; gated courtyard</div>
+        <div><svg viewBox="0 0 24 24"><path d="M7 4h10v6a5 5 0 01-10 0z"/><path d="M12 15v5M8 20h8"/></svg>Spanish coffee maker, air fryer, blender</div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4.4-3 7.5-7 8.5-4-1-7-4.1-7-8.5V7z"/></svg>Cameras, smoke &amp; CO alarms</div>
+      </div>
+      <p style="font-size:13px; color:var(--ink-3); margin-top:14px">Each unit lists 56–58 amenities
+        on Airbnb — open a listing for the complete set. Check-in 2–9 PM · checkout by noon.</p>
+    </div>
+  </section>
+
+  <!-- ============ LOCATION ============ -->
+  <section class="sec" id="location">
+    <div class="wrap split" style="align-items:stretch">
+      <div>
+        <p class="eyebrow">The neighborhood</p>
+        <h2>In the heart of <em>Las Terrenas</em></h2>
+        <p>Vibrant and alive, with plenty to do — all of it on foot. Cross the street to the
+          beach, wander to dinner, and never think about a car.</p>
+        <div class="near">
+          <div><b>The beach</b><span>Across the street</span></div>
+          <div><b>Restaurants &amp; bars</b><span>Walking distance</span></div>
+          <div><b>Supermarket</b><span>Walking distance</span></div>
+          <div><b>Bakeries</b><span>Walking distance</span></div>
+          <div><b>24-hr pharmacy</b><span>Walking distance</span></div>
+          <div><b>Hospital</b><span>Walking distance</span></div>
+        </div>
+      </div>
+      <button class="loc-shot" data-p="a2_21" aria-label="Las Terrenas from above">
+        <img src="elba-photos/a2_21.jpg" alt="Las Terrenas from above — the house marked among palms, steps from the water" loading="lazy">
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ HOST ============ -->
+  <section class="hostband" id="host">
+    <div class="wrap">
+      <div class="host">
+        <div class="ava"><img src="elba-photos/host.jpg" alt="Maria, your host" loading="lazy"></div>
+        <div>
+          <p class="eyebrow" style="margin-bottom:10px">Your host</p>
+          <p class="host-quote">“Local to the Dominican Republic almost my entire life. My heart
+            has always been here — this place is very special to me and my family.
+            Enjoy the salt life!”</p>
+          <p style="font-size:14.5px; margin:0"><b style="color:var(--ink)">Maria</b> · Superhost ·
+            speaks English &amp; Spanish · obsessed with orchids</p>
+          <div class="host-stats">
+            <div><b>5.0 ★</b><span>Host rating</span></div>
+            <div><b>100%</b><span>Response rate</span></div>
+            <div><b>&lt; 1 hr</b><span>Response time</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Guest reviews</p>
+        <h2>Every review so far: <em>five stars</em></h2>
+        <div class="scorebar">
+          <span><b>5.0</b> Cleanliness</span><span><b>5.0</b> Accuracy</span>
+          <span><b>5.0</b> Check-in</span><span><b>5.0</b> Communication</span>
+          <span><b>5.0</b> Location</span><span><b>5.0</b> Value</span>
+        </div>
+      </div>
+      <div class="rev">
+        <article><div class="stars">★★★★★</div>
+          <p>“I recommend them 100%. Everything is clean and safe, and the restaurants are super
+            close. Rosita the dog is super cute.”</p>
+          <footer><b>Mariangela</b> · Miami, Florida</footer></article>
+        <article><div class="stars">★★★★★</div>
+          <p>“The location is ideal — a short walk from restaurants, bars and nightclubs, and the
+            area feels very safe. Maria was a fantastic host, always available.”</p>
+          <footer><b>Jeudys</b> · San Francisco de Macorís, DR</footer></article>
+        <article><div class="stars">★★★★★</div>
+          <p>“Everything is within walking distance, even the beach. Nice little pool, clear and
+            clean water. I will recommend it to my friends and family.”</p>
+          <footer><b>Lou Ida</b> · Brossard, Canada</footer></article>
+        <article><div class="stars">★★★★★</div>
+          <p>“The apartment is very comfortable and brand new. The air conditioning works super
+            well, and it's close to all the sights.”</p>
+          <footer><b>Isselin</b> · Orlando, Florida</footer></article>
+        <article><div class="stars">★★★★★</div>
+          <p>“Beautiful staying, I wish I stayed for more time!”</p>
+          <footer><b>Domingo</b> · Boston, Massachusetts</footer></article>
+        <article><div class="stars">★★★★★</div>
+          <p>“A very cozy space close to everything.”</p>
+          <footer><b>Milton</b> · Santiago de los Caballeros, DR</footer></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="cta-band">
+    <div class="bg"><img src="elba-photos/p_27.jpg" alt="The beach at Las Terrenas" loading="lazy"></div>
+    <div class="cta-in">
+      <p class="eyebrow">Elba House awaits</p>
+      <h2>The magic of Las Terrenas is a booking away</h2>
+      <p>Check live availability for your dates — Maria responds within the hour.</p>
+      <div class="cta-actions">
+        <a class="btn gold" href="#book">Book your stay</a>
+        <a class="btn glass" href="mailto:Elbahousedr@gmail.com">Email Maria</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="f-mark" href="#top">
+          <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+            <circle cx="20" cy="20" r="18.5" fill="none" stroke="#0c5d63" stroke-width="1.2"/>
+            <circle cx="20" cy="15" r="4.6" fill="#e8a838"/>
+            <path d="M9 24c4-1.6 7.5-1.6 11 0 3.5 1.6 7 1.6 11 0" fill="none" stroke="#0c5d63" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          <span><b>ELBA HOUSE</b><small>Las Terrenas</small></span>
+        </a>
+        <p style="font-size:14px; max-width:32ch">One, two, and penthouse with 2 bedrooms + mezzanine.
+          Steps away from the beach. Come stay and enjoy the magic of Las Terrenas.</p>
+      </div>
+      <div>
+        <h5>Book a stay</h5>
+        <a href="https://www.airbnb.com/rooms/1629378845820319794" target="_blank" rel="noopener">One Bedroom</a>
+        <a href="https://www.airbnb.com/rooms/1631319739868264513" target="_blank" rel="noopener">Two Bedroom</a>
+        <a href="https://www.airbnb.com/rooms/1630548070051569133" target="_blank" rel="noopener">Penthouse + Mezzanine</a>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <a href="mailto:Elbahousedr@gmail.com">Elbahousedr@gmail.com</a>
+        <a href="https://www.instagram.com/elbahousedr" target="_blank" rel="noopener">@elbahousedr</a>
+        <a href="#location">Las Terrenas, Samaná, DR</a>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> Elba House · Las Terrenas, Samaná, Dominican Republic</span>
+      <span>Enjoy the salt life.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ALL PHOTOS MODAL ============ -->
+<div class="ov" id="allOv">
+  <div class="sheet">
+    <button class="x" data-close>✕</button>
+    <h3>Gallery</h3>
+    <p style="font-size:13.5px">Organized by area and apartment.</p>
+    <div class="grp-nav" id="grpNav"></div>
+    <div id="allGrid"></div>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="ov" id="lbOv">
+  <div class="lb">
+    <div class="lb-img"><img id="lbImg" alt=""></div>
+    <div class="lb-nav"><button id="lbPrev" aria-label="Previous">‹</button><button id="lbNext" aria-label="Next">›</button></div>
+    <div class="lb-cap"><span id="lbCap"></span><span id="lbCount"></span></div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   PHOTOS — the actual Airbnb listing photos, saved locally.
+   a1_* = One Bedroom · a2_* = Two Bedroom · p_* = Penthouse
+   ============================================================ */
+const DIR = "elba-photos/";
+const cap = {
+  a1_01:"One Bedroom — living room", a1_02:"One Bedroom — queen bedroom",
+  a1_03:"The building and pergola", a1_05:"One Bedroom — sofa and lounge",
+  a1_06:"One Bedroom — TV lounge", a1_07:"One Bedroom — kitchen",
+  a1_08:"One Bedroom — dining for two", a1_09:"Interior stair",
+  a2_01:"Two Bedroom — living room", a2_02:"The pool", a2_03:"Pool deck and loungers",
+  a2_04:"Two Bedroom — kitchen", a2_05:"Playa Casa Blanca from above",
+  a2_06:"Two Bedroom — bedroom one", a2_07:"Two Bedroom — dining",
+  a2_09:"Front of the house", a2_11:"Two Bedroom — media wall",
+  a2_12:"Two Bedroom — living room", a2_13:"Two Bedroom — bedroom two",
+  a2_14:"Two Bedroom — bathroom", a2_15:"Two Bedroom — walk-in shower",
+  a2_16:"The building", a2_17:"Pool from the balcony", a2_18:"Afternoon at the pool",
+  a2_19:"Elba House from above", a2_20:"Playa Casa Blanca — across the street",
+  a2_21:"Las Terrenas from above", a2_22:"Rooftop terrace",
+  p_01:"Penthouse — stair and dining", p_02:"Pool and facade", p_03:"Penthouse — lounge",
+  p_04:"The pool", p_05:"Penthouse — balcony", p_06:"Penthouse — from the mezzanine",
+  p_07:"The coast at Las Terrenas", p_08:"Penthouse — queen bedroom",
+  p_09:"Penthouse — bedroom two", p_10:"Penthouse — mezzanine bedroom",
+  p_11:"The building", p_12:"Penthouse — sofa and stair", p_13:"Penthouse — living room",
+  p_14:"Penthouse — high ceilings", p_15:"Penthouse — lounge",
+  p_16:"Penthouse — kitchen", p_17:"Penthouse — dining", p_18:"Penthouse — mezzanine rail",
+  p_19:"Penthouse — shower detail", p_20:"Penthouse — bathroom",
+  p_21:"Penthouse — bathroom two", p_22:"Penthouse — walk-in shower",
+  p_23:"Courtyard and pergola", p_24:"Penthouse — stairwell", p_25:"Pool from the penthouse",
+  p_26:"Penthouse terrace", p_27:"The beach, seconds away", p_28:"The house from above",
+  p_29:"Las Terrenas — the neighborhood"
+};
+const P = id => DIR + id + ".jpg";
+
+/* Master lightbox order */
+const PHOTOS = [
+  "a2_20","p_04","p_01","a1_08","a2_21",
+  "a1_01","a1_02","a1_05","a1_06","a1_07","a1_09",
+  "a2_12","a2_11","a2_06","a2_13","a2_04","a2_07","a2_14","a2_15","a2_02","a2_18","a2_22",
+  "p_13","p_14","p_12","p_16","p_17","p_08","p_09","p_10","p_18","p_05","p_06","p_20","p_22","p_26","p_25",
+  "a2_09","p_23","p_02","a2_16","a2_05","a2_19","a2_17","a1_03","p_11"
+].map(id => ({id, src:P(id), cap:cap[id] || ""}));
+const IDX = Object.fromEntries(PHOTOS.map((p,i)=>[p.id,i]));
+
+/* ---------- real data, straight off the live listings ---------- */
+const UNITS = [
+  {
+    name:"One Bedroom",
+    full:"Beautiful One Bedroom apartment across from beach",
+    id:"1629378845820319794",
+    cover:"a1_01", badge:"★ 5.0 · Guest favorite",
+    guests:2, spec:"2 guests · 1 bedroom · 1 bed · 1 bath",
+    desc:"A stylish, centrally located one bedroom — full kitchen, A/C in bedroom and living space, and the beach across the street."
+  },
+  {
+    name:"Two Bedroom",
+    full:"Beautiful two bedroom apartment across from beach",
+    id:"1631319739868264513",
+    cover:"a2_12", badge:"★ 5.0 · Guest favorite",
+    guests:4, spec:"4 guests · 2 bedrooms · 2 beds · 1 bath",
+    desc:"Room for four, one street back from the sand — full kitchen, comfortable living space, pool and gated parking included."
+  },
+  {
+    name:"Penthouse + Mezzanine",
+    full:"Penthouse by the beach — 2 bedrooms and a mezzanine",
+    id:"1630548070051569133",
+    cover:"p_01", badge:"Top floor · ocean view", dark:true,
+    guests:6, spec:"6 guests · 3 bedrooms · 3 queen beds · 2 baths",
+    desc:"The top floor: high ceilings, a partial ocean view, three queen beds across two bedrooms and a mezzanine, and A/C throughout."
+  }
+];
+
+/* ---------- shortcuts ---------- */
+const $ = s => document.querySelector(s);
+const el = (tag, cls) => { const e = document.createElement(tag); if (cls) e.className = cls; return e; };
+
+/* ---------- nav solid-on-scroll ---------- */
+const nav = $("#nav");
+const setNav = () => nav.classList.toggle("solid", scrollY > innerHeight * .72);
+addEventListener("scroll", setNav, {passive:true}); setNav();
+
+/* ---------- lightbox ---------- */
+let gi = 0;
+function showG(i){
+  gi = (i + PHOTOS.length) % PHOTOS.length;
+  $("#lbImg").src = PHOTOS[gi].src;
+  $("#lbImg").alt = PHOTOS[gi].cap;
+  $("#lbCap").textContent = PHOTOS[gi].cap;
+  $("#lbCount").textContent = (gi+1) + " / " + PHOTOS.length;
+}
+const openOv  = ov => { ov.classList.add("on"); document.body.style.overflow = "hidden"; };
+const closeOv = ov => { ov.classList.remove("on"); document.body.style.overflow = ""; };
+function openLB(id){
+  if (IDX[id] !== undefined) showG(IDX[id]);
+  else { $("#lbImg").src = P(id); $("#lbCap").textContent = cap[id] || ""; $("#lbCount").textContent = ""; }
+  openOv($("#lbOv"));
+}
+$("#lbPrev").addEventListener("click", e => { e.stopPropagation(); showG(gi - 1); });
+$("#lbNext").addEventListener("click", e => { e.stopPropagation(); showG(gi + 1); });
+document.querySelectorAll(".ov").forEach(ov => ov.addEventListener("click", e => {
+  if (e.target === ov || e.target.hasAttribute("data-close")) closeOv(ov);
+}));
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.querySelectorAll(".ov.on").forEach(closeOv);
+  if ($("#lbOv").classList.contains("on")){
+    if (e.key === "ArrowLeft")  showG(gi - 1);
+    if (e.key === "ArrowRight") showG(gi + 1);
+  }
+});
+/* any element with data-p opens the lightbox at that photo */
+document.querySelectorAll("[data-p]").forEach(b =>
+  b.addEventListener("click", () => openLB(b.dataset.p)));
+
+/* ---------- unit cards ---------- */
+const cards = $("#unitCards");
+UNITS.forEach((u, i) => {
+  const c = el("article","ucard");
+  const shot = el("button","ucard-shot");
+  shot.setAttribute("aria-label", u.full);
+  const badge = el("span","ucard-badge" + (u.dark ? " dark" : ""));
+  badge.textContent = u.badge;
+  const im = el("img"); im.src = P(u.cover); im.alt = u.full; if (i>0) im.loading = "lazy";
+  shot.append(badge, im);
+  shot.addEventListener("click", () => openLB(u.cover));
+  const body = el("div","ucard-body");
+  body.innerHTML = `
+    <h3>${u.name}</h3>
+    <div class="specs">${u.spec}</div>
+    <p class="desc">${u.desc}</p>
+    <div class="ucard-cta">
+      <a class="btn" href="https://www.airbnb.com/rooms/${u.id}" target="_blank" rel="noopener">Book on Airbnb</a>
+      <button class="tlink" data-plan="${i}">Plan dates</button>
+    </div>`;
+  c.append(shot, body);
+  cards.appendChild(c);
+});
+cards.addEventListener("click", e => {
+  const b = e.target.closest("[data-plan]");
+  if (!b) return;
+  $("#bUnit").value = b.dataset.plan; syncBooking();
+  $("#book").scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+/* ---------- gallery band ---------- */
+const band = $("#bandTrack");
+["p_04","a1_01","p_13","a2_07","p_08","a2_18","p_17","a2_06","p_26","a1_07","p_05","a2_15"].forEach(id => {
+  const b = el("button");
+  b.setAttribute("aria-label", cap[id] || id);
+  const im = el("img"); im.src = P(id); im.alt = cap[id] || ""; im.loading = "lazy";
+  b.appendChild(im); b.addEventListener("click", () => openLB(id));
+  band.appendChild(b);
+});
+
+/* ---------- all-photos modal ---------- */
+const GROUPS = [
+  ["The building, pool & beach", ["a2_20","a2_05","a2_21","a2_19","p_04","a2_02","a2_18","a2_03","p_02","p_25","a2_17","a2_09","p_23","a2_16","p_11","a1_03","a2_22","p_26"]],
+  ["One Bedroom", ["a1_01","a1_02","a1_05","a1_06","a1_07","a1_08","a1_09"]],
+  ["Two Bedroom", ["a2_12","a2_11","a2_01","a2_06","a2_13","a2_04","a2_07","a2_14","a2_15"]],
+  ["Penthouse + Mezzanine", ["p_01","p_13","p_14","p_15","p_12","p_03","p_16","p_17","p_08","p_09","p_10","p_18","p_24","p_05","p_06","p_20","p_21","p_22","p_19"]]
+];
+const allGrid = $("#allGrid");
+const grpNav = $("#grpNav");
+GROUPS.forEach(([label, ids]) => {
+  const h = el("div","grp"); h.textContent = label; allGrid.appendChild(h);
+  const chip = el("button"); chip.textContent = label;
+  chip.addEventListener("click", () => h.scrollIntoView({behavior:"smooth", block:"start"}));
+  grpNav.appendChild(chip);
+  const g = el("div","pgrid");
+  ids.forEach(id => {
+    const b = el("button"); b.setAttribute("aria-label", cap[id] || id);
+    const im = el("img"); im.src = P(id); im.alt = cap[id] || ""; im.loading = "lazy";
+    b.appendChild(im);
+    b.addEventListener("click", () => { closeOv($("#allOv")); openLB(id); });
+    g.appendChild(b);
+  });
+  allGrid.appendChild(g);
+});
+$("#heroPhotos").addEventListener("click", () => openOv($("#allOv")));
+$("#allPhotosBtn").addEventListener("click", () => openOv($("#allOv")));
+
+/* ---------- booking bar ---------- */
+const bUnit=$("#bUnit"), bIn=$("#bIn"), bOut=$("#bOut"), bGo=$("#bGo");
+let guests = 1;
+
+const today = new Date().toISOString().slice(0,10);
+bIn.min = today; bOut.min = today;
+
+function syncBooking(){
+  const u = UNITS[+bUnit.value];
+  if (guests > u.guests) guests = u.guests;
+  $("#bGuestLabel").textContent = guests + (guests === 1 ? " guest" : " guests");
+  $("#gMinus").disabled = guests <= 1;
+  $("#gPlus").disabled  = guests >= u.guests;
+
+  const w = $("#bWarn");
+  w.textContent = guests >= u.guests ? `${u.name} sleeps a maximum of ${u.guests}.` : "";
+
+  // real Airbnb deep link
+  const p = new URLSearchParams({guests:String(guests), adults:String(guests)});
+  if (bIn.value)  p.set("check_in",  bIn.value);
+  if (bOut.value) p.set("check_out", bOut.value);
+  bGo.href = `https://www.airbnb.com/rooms/${u.id}?${p}`;
+
+  // nights summary
+  const s = $("#bSummary");
+  if (bIn.value && bOut.value){
+    const n = Math.round((new Date(bOut.value) - new Date(bIn.value)) / 864e5);
+    if (n > 0){
+      const f = d => new Date(d + "T12:00").toLocaleDateString(undefined,{month:"short",day:"numeric"});
+      s.innerHTML = `<b>${u.name}</b> · ${f(bIn.value)} – ${f(bOut.value)} · ${n} ${n===1?"night":"nights"} · ${guests} ${guests===1?"guest":"guests"}`;
+    } else {
+      s.textContent = "Booking and payment happen securely on Airbnb.";
+      w.textContent = "Checkout must be after check-in.";
+    }
+  } else s.textContent = "Booking and payment happen securely on Airbnb.";
+}
+
+bUnit.addEventListener("change", syncBooking);
+bIn.addEventListener("change", () => { bOut.min = bIn.value || today; syncBooking(); });
+bOut.addEventListener("change", syncBooking);
+$("#gPlus").addEventListener("click",  () => { guests++; syncBooking(); });
+$("#gMinus").addEventListener("click", () => { guests--; syncBooking(); });
+
+/* ---------- init ---------- */
+$("#yr").textContent = new Date().getFullYear();
+syncBooking();
+</script>
+</body>
+</html>
