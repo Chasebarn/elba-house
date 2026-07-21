@@ -450,7 +450,7 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
     <a class="lnk" href="#gallery">Gallery</a>
     <a class="lnk" href="#location">Location</a>
     <a class="lnk" href="#reviews">Reviews</a>
-    <a class="btn" href="#book">Check availability</a>
+    <a class="btn" href="#book">Book direct</a>
   </div>
 </nav>
 
@@ -521,7 +521,7 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
       <!-- booking bar -->
       <div class="bookbar" id="book">
         <p class="eyebrow">Plan your stay</p>
-        <p class="bsub">Pick dates for live availability and pricing on Airbnb · <b>5.0</b> across 12 reviews · hosted by Superhost Maria</p>
+        <p class="bsub">Book directly with Maria — no platform fees · <b>5.0</b> across 12 reviews · she replies within the hour</p>
         <div class="bb-grid">
           <label class="bb-f"><span>Apartment</span>
             <select id="bUnit">
@@ -539,10 +539,10 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
               <button id="gPlus" aria-label="More guests"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
             </div>
           </div>
-          <div class="bb-go"><a class="btn" id="bGo" href="#" target="_blank" rel="noopener">Check availability</a></div>
+          <div class="bb-go"><a class="btn" id="bGo" href="#">Request to book</a></div>
         </div>
         <div class="bb-note">
-          <span id="bSummary">Booking and payment happen securely on Airbnb.</span>
+          <span id="bSummary">Your request opens as an email to Maria — payment and details are arranged directly.</span>
           <span id="bWarn"></span>
         </div>
       </div>
@@ -662,9 +662,8 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
           <p>“A very cozy space close to everything.”</p>
           <footer><b>Milton</b> · Santiago de los Caballeros, DR</footer></article>
       </div>
-      <div style="margin-top:24px">
-        <a class="tlink" href="https://www.airbnb.com/rooms/1631319739868264513/reviews" target="_blank" rel="noopener">Read the reviews on Airbnb</a>
-      </div>
+      <p style="font-size:var(--t-caption); color:var(--ink-3); margin-top:24px">
+        All twelve reviews were collected through verified Airbnb stays.</p>
     </div>
   </section>
 
@@ -677,11 +676,11 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
     <div class="cta-in">
       <p class="eyebrow">Elba House awaits</p>
       <h2>The magic of Las Terrenas is a booking away</h2>
-      <p>Check live availability for your dates — Maria responds within the hour.</p>
+      <p>Send Maria your dates and book directly — no platform fees, no middleman.</p>
       <div class="cta-actions">
-        <a class="btn paper" id="ctaGo" href="#" target="_blank" rel="noopener">Check availability on Airbnb</a>
+        <a class="btn paper" id="ctaGo" href="#">Request to book</a>
       </div>
-      <p class="cta-email"><a href="mailto:Elbahousedr@gmail.com">Questions? Email Maria</a> — she replies within the hour.</p>
+      <p class="cta-email"><a href="https://www.instagram.com/elbahousedr" target="_blank" rel="noopener">@elbahousedr</a> · <a href="mailto:Elbahousedr@gmail.com">Elbahousedr@gmail.com</a></p>
     </div>
   </section>
 </main>
@@ -704,10 +703,10 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
           from Playa Casa Blanca — a one bedroom, a two bedroom, and a penthouse with mezzanine.</p>
       </div>
       <div>
-        <h5>Book a stay</h5>
-        <a href="https://www.airbnb.com/rooms/1629378845820319794" target="_blank" rel="noopener">One Bedroom</a>
-        <a href="https://www.airbnb.com/rooms/1631319739868264513" target="_blank" rel="noopener">Two Bedroom</a>
-        <a href="https://www.airbnb.com/rooms/1630548070051569133" target="_blank" rel="noopener">Penthouse + Mezzanine</a>
+        <h5>Book direct</h5>
+        <a href="#book" data-plan="0">One Bedroom</a>
+        <a href="#book" data-plan="1">Two Bedroom</a>
+        <a href="#book" data-plan="2">Penthouse + Mezzanine</a>
       </div>
       <div>
         <h5>Get in touch</h5>
@@ -726,7 +725,7 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
 <!-- ============ MOBILE BOOKING BAR ============ -->
 <div class="mbar" id="mbar">
   <span style="font-size:13px;color:var(--ink-2)"><b style="color:var(--ink)">5.0</b> · Superhost</span>
-  <a class="btn" href="#book">Check availability</a>
+  <a class="btn" href="#book">Book direct</a>
 </div>
 
 <!-- ============ GALLERY MODAL ============ -->
@@ -735,7 +734,7 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
     <button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <h3>Gallery</h3>
     <p style="font-size:13px">Organized by area and apartment.</p>
-    <a class="btn" href="#book" data-close style="padding:10px 18px; float:right">Check availability</a>
+    <a class="btn" href="#book" data-close style="padding:10px 18px; float:right">Request to book</a>
     <div class="grp-nav" id="grpNav"></div>
     <div id="allGrid"></div>
   </div>
@@ -889,13 +888,12 @@ UNITS.forEach((u, i) => {
     <div class="specs">${u.spec}</div>
     <p class="desc">${u.desc}</p>
     <div class="ucard-cta">
-      <button class="tlink" data-plan="${i}">Check availability</button>
-      <a class="tlink tlink-2nd" href="https://www.airbnb.com/rooms/${u.id}" target="_blank" rel="noopener">View on Airbnb</a>
+      <button class="tlink" data-plan="${i}">Request to book</button>
     </div>`;
   c.append(shot, body);
   cards.appendChild(c);
 });
-cards.addEventListener("click", e => {
+document.addEventListener("click", e => {
   const b = e.target.closest("[data-plan]");
   if (!b) return;
   $("#bUnit").value = b.dataset.plan; syncBooking();
@@ -958,11 +956,15 @@ function syncBooking(){
     w.style.color = "var(--ink-3)";                 /* informational, not an error */
   } else w.textContent = "";
 
-  // real Airbnb deep link
-  const p = new URLSearchParams({guests:String(guests), adults:String(guests)});
-  if (bIn.value)  p.set("check_in",  bIn.value);
-  if (bOut.value) p.set("check_out", bOut.value);
-  bGo.href = `https://www.airbnb.com/rooms/${u.id}?${p}`;
+  // direct booking request — prefilled email to Maria, no platform in between
+  const f = d => new Date(d + "T12:00").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+  let body = `Hello Maria,\n\nI'd like to book the ${u.name}`;
+  if (bIn.value && bOut.value && new Date(bOut.value) > new Date(bIn.value)){
+    const n = Math.round((new Date(bOut.value) - new Date(bIn.value)) / 864e5);
+    body += ` from ${f(bIn.value)} to ${f(bOut.value)} (${n} ${n===1?"night":"nights"})`;
+  }
+  body += ` for ${guests} ${guests===1?"guest":"guests"}.\n\nName:\nPhone / WhatsApp:\n\nThank you!`;
+  bGo.href = `mailto:Elbahousedr@gmail.com?subject=${encodeURIComponent("Booking request — " + u.name)}&body=${encodeURIComponent(body)}`;
   if (ctaGo) ctaGo.href = bGo.href;                 /* the final CTA carries the configured stay */
 
   // nights summary
