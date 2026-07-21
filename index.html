@@ -76,7 +76,12 @@ button{font:inherit; cursor:pointer}
   font-size:var(--t-micro); letter-spacing:var(--track-wide); text-transform:uppercase;
   font-weight:600; color:var(--ink-3); margin:0 0 14px;
 }
-.hero .eyebrow, .cta-in .eyebrow{color:#f4d489}
+.hero .eyebrow{
+  color:rgba(255,255,255,.95);                /* gold can't reach 4.5:1 over sunlit sand */
+  text-shadow:0 1px 2px rgba(9,13,14,.55), 0 2px 18px rgba(9,13,14,.45);
+  /* 11px type over surf: the scrim alone measures short, so small text gets a local anchor */
+}
+.cta-in .eyebrow{color:#f4d489}
 h2{font-family:var(--serif); font-size:var(--t-h2); font-weight:520;
   letter-spacing:-.01em; line-height:1.12; margin:0 0 16px}
 p{margin:0 0 12px; color:var(--ink-2)}
@@ -131,9 +136,12 @@ p{margin:0 0 12px; color:var(--ink-2)}
 .hero-bg img{width:100%; height:100%; object-fit:cover; object-position:center 62%}
 .hero-bg:after{
   content:""; position:absolute; inset:0;
+  /* three layers tuned to measured WCAG contrast: a local pool behind the
+     eyebrow/headline corner, the angled text column, and the vertical ramp */
   background:
-    linear-gradient(96deg, rgba(9,13,14,.58) 0%, rgba(9,13,14,.30) 40%, rgba(9,13,14,.04) 66%),
-    linear-gradient(180deg, rgba(10,14,15,.38) 0%, rgba(10,14,15,0) 30%, rgba(9,13,14,0) 55%, rgba(9,13,14,.70) 100%);
+    radial-gradient(ellipse 50% 44% at 15% 46%, rgba(9,13,14,.48), rgba(9,13,14,0) 72%),
+    linear-gradient(96deg, rgba(9,13,14,.66) 0%, rgba(9,13,14,.46) 38%, rgba(9,13,14,.08) 64%, rgba(9,13,14,.04) 100%),
+    linear-gradient(180deg, rgba(10,14,15,.38) 0%, rgba(10,14,15,0) 28%, rgba(9,13,14,.14) 46%, rgba(9,13,14,.42) 62%, rgba(9,13,14,.60) 82%, rgba(9,13,14,.72) 100%);
 }
 .hero-main{
   position:relative; z-index:2; flex:1; display:flex; flex-direction:column;
@@ -378,7 +386,12 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
   .mark-t b{font-size:15px; white-space:nowrap}
   .hero-main{padding:96px 20px 0}
   .eyebrow-tail{display:none}
-  .hero-bg:after{background:linear-gradient(180deg, rgba(10,14,15,.44) 0%, rgba(10,14,15,.10) 30%, rgba(10,14,15,.18) 55%, rgba(9,13,14,.64) 100%)}
+  /* scrim tuned to measured WCAG contrast: clear window 18-36%, then a firm
+     ramp under the text block (white text needs bg luminance ≤ .18) */
+  .hero-bg:after{background:linear-gradient(180deg,
+    rgba(10,14,15,.42) 0%, rgba(10,14,15,.10) 18%, rgba(10,14,15,.22) 30%,
+    rgba(9,13,14,.58) 42%, rgba(9,13,14,.68) 54%, rgba(9,13,14,.76) 72%, rgba(9,13,14,.82) 100%)}
+  .hero .eyebrow{color:rgba(255,255,255,.92)}  /* gold fails 4.5:1 over surf even under the ramp */
   .hero-cta{flex-direction:column; align-items:stretch; margin-bottom:32px; gap:18px}
   .hero-cta .tlink{align-self:center}
   .trust-in{padding:16px 20px}
