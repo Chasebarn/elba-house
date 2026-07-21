@@ -399,9 +399,11 @@ button:hover > img, .loc-shot:hover img{transform:scale(1.02)}
   .t b{font-size:15px}
   .t span{font-size:10px; letter-spacing:var(--track-tight)}
   .t-tail{display:none}
-  .intro-imgs{height:auto; margin-bottom:32px}
-  .ii-a{position:relative; top:auto; left:auto; display:block; width:100%; height:auto; aspect-ratio:4/3}
-  .ii-b{width:48%; height:auto; aspect-ratio:4/3; bottom:-32px; outline-width:5px}
+  /* selectors scoped .intro-imgs .ii-* to outrank the base `.intro-imgs button`
+     absolute positioning (a bare .ii-a override silently loses that fight) */
+  .intro-imgs{height:auto; margin:8px 0 44px}
+  .intro-imgs .ii-a{position:static; display:block; width:100%; height:auto; aspect-ratio:4/3}
+  .intro-imgs .ii-b{position:absolute; width:48%; height:auto; aspect-ratio:4/3; right:0; bottom:-32px; outline-width:5px}
   .stat-row{grid-template-columns:1fr 1fr; row-gap:16px}
   .stat:nth-child(odd){border-left:0; padding-left:0}
   .ucard{grid-template-columns:1fr; gap:20px; padding:40px 0}
